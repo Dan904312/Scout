@@ -1173,19 +1173,18 @@ function startScan() {
       showToast('No response from AI — try again', '⚠️');
       return;
     }
-
-    var raw = block.text || '';
-    console.log('Scout: AI text (first 300):', raw.slice(0, 300));
-
-    // Pull out the JSON object
-    var jsonMatch = raw.match(/{[sS]*}/);
-    if (!jsonMatch) {
-      console.error('Scout: no JSON found in AI text:', raw.slice(0, 400));
-      showToast('AI response unclear — try again', '⚠️');
-      return;
-    }
-    var parsed;
-    try { parsed = JSON.parse(jsonMatch[0]); }
+var raw = block.text || '';
+console.log('Scout: full response:', raw.slice(0, 300));
+var parsed = null;
+var start = raw.indexOf('{');
+var end = raw.lastIndexOf('}');
+if (start !== -1 && end !== -1 && end > start) {
+  try { parsed = JSON.parse(raw.slice(start, end + 1)); } catch(e) { console.error('Parse error:', e.message); }
+}
+if (!parsed) {
+  showToast('AI response unclear — try again', '⚠️');
+  return;
+}    
     catch(e) {
       console.error('Scout: JSON parse failed:', e.message, jsonMatch[0].slice(0, 200));
       showToast('Parse error — try again', '⚠️');
