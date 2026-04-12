@@ -211,7 +211,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
 .ud.inf{width:24px;border-radius:4px;background:var(--accent)}
 
 /* ─────── RESULTS ─────── */
-.res-hd{padding:calc(env(safe-area-inset-top)+72px) 24px 0;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.res-hd{padding:calc(env(safe-area-inset-top)+50px) 24px 0;display:flex;align-items:center;gap:10px;flex-shrink:0}
 .back-btn{width:36px;height:36px;border-radius:10px;background:var(--s2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer}
 .res-title{font-family:var(--fd);font-size:17px;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
 .res-sub{font-size:12px;color:var(--text2);margin-top:1px}
@@ -275,7 +275,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
 .rate-btn{flex:1;padding:10px;border-radius:var(--r);border:1.5px solid var(--border);background:var(--s2);font-size:13px;color:var(--text2);display:flex;align-items:center;justify-content:center;gap:6px}
 
 /* ─────── LIBRARY ─────── */
-.lib-hd{padding:calc(env(safe-area-inset-top)+72px) 24px 12px;padding-left:32px;display:flex;align-items:center;justify-content:space-between}
+.lib-hd{padding:calc(env(safe-area-inset-top)+50px) 24px 12px;padding-left:32px;display:flex;align-items:center;justify-content:space-between}
 .lib-title{font-family:var(--fd);font-size:22px;font-weight:800;letter-spacing:-.3px;color:var(--text)}
 .lib-count{font-size:12px;color:var(--text2);background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-weight:600}
 .lib-tabs{display:flex;gap:7px;padding:0 24px 12px;overflow-x:auto}
@@ -298,7 +298,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
 .hist-prev-row{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2)}
 
 /* ─────── MENU ─────── */
-.menu-hd{padding:calc(env(safe-area-inset-top)+72px) 32px 12px}
+.menu-hd{padding:calc(env(safe-area-inset-top)+50px) 32px 12px}
 .menu-title{font-family:var(--fd);font-size:22px;font-weight:800;letter-spacing:-.3px;color:var(--text)}
 .menu-sec{margin:0 24px 18px}
 .menu-sec-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
@@ -319,7 +319,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
 .tgl input:checked+.tgl-s::before{transform:translateX(20px)}
 
 /* ─────── PROFILE ─────── */
-.prof-hd{padding:calc(env(safe-area-inset-top)+72px) 24px 12px;padding-left:32px;display:flex;align-items:center;justify-content:space-between}
+.prof-hd{padding:calc(env(safe-area-inset-top)+50px) 24px 12px;padding-left:32px;display:flex;align-items:center;justify-content:space-between}
 .prof-title{font-family:var(--fd);font-size:22px;font-weight:800;letter-spacing:-.3px;color:var(--text)}
 .prof-edit-btn{background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:12px;font-weight:600;color:var(--text)}
 .prof-hero{margin:0 20px 14px;background:linear-gradient(135deg,rgba(124,77,255,.12),rgba(255,92,53,.08));border:1px solid rgba(124,77,255,.2);border-radius:var(--rlg);padding:20px}
@@ -668,7 +668,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
 
 <!-- DIRECTOR SCREEN -->
 <div class="screen" id="screen-director" style="padding-bottom:0">
-  <div style="padding:calc(env(safe-area-inset-top)+72px) 20px 10px;display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:1px solid var(--border)">
+  <div style="padding:calc(env(safe-area-inset-top)+50px) 20px 10px;display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:1px solid var(--border)">
     <div class="back-btn" onclick="closeDirector()">←</div>
     <div style="flex:1">
       <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:var(--text)">PreShoot Director</div>
@@ -678,7 +678,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
   </div>
   <div style="display:flex;gap:7px;padding:10px 14px;border-bottom:1px solid var(--border);overflow-x:auto;flex-shrink:0" id="dir-pills"></div>
   <div style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px" id="dir-msgs"></div>
-  <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:9px;align-items:flex-end;padding-bottom:calc(10px + env(safe-area-inset-bottom));flex-shrink:0">
+  <div style="padding:10px 14px;border-top:1px solid var(--border);display:flex;gap:9px;align-items:flex-end;padding-bottom:calc(env(safe-area-inset-bottom) + 8px);flex-shrink:0">
     <textarea id="dir-input" placeholder="Ask anything — filming, editing, gear, strategy..." style="flex:1;background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:10px 14px;font-size:14px;color:var(--text);outline:none;resize:none;min-height:42px;max-height:120px;font-family:var(--fb);line-height:1.5" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendDirector()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'"></textarea>
     <button onclick="sendDirector()" style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:18px;flex-shrink:0">→</button>
   </div>
