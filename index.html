@@ -669,7 +669,7 @@ button{font-family:var(--fb);cursor:pointer;border:none;background:none}
 <div class="screen" id="screen-profile"><div class="sb" id="prof-sb"></div></div>
 
 <!-- DIRECTOR SCREEN -->
-<div class="screen" id="screen-director" style="padding-bottom:0">
+<div class="screen" id="screen-director" style="padding-bottom:80px">  
   <div style="padding:60px 20px 10px;display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:1px solid var(--border)">
     <div class="back-btn" onclick="closeDirector()">←</div>
     <div style="flex:1">
@@ -807,7 +807,12 @@ function obInit() {
   // Build dots
   var dh = '';
   for (var j=0;j<OB_TOTAL;j++) dh += '<div class="ob-dot'+(j===0?' active':'') + '" id="od'+j+'"></div>';
-  document.getElementById('ob-dots').innerHTML = dh;
+  document.getElementById('ob-dots').innerHTML = const msgs = document.getElementById("dir-msgs");
+
+const msg = document.createElement("div");
+msg.textContent = response;
+
+msgs.appendChild(msg);;
   S.obSlide = 0;
   updateOb();
 }
